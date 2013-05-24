@@ -10,7 +10,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
             loadAccordion:function () {
                 var viewMeta = {};
 
-                var url = "dashboard/enums.action";
+                var url = "utility/enums.action";
                 xhr(url, {
                     handleAs:"json",
                     method:"POST",
@@ -60,8 +60,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
                 this.initAccMap();
 
                 var viewMeta = {};
-                var url = "dashboard/panes.action";
-                xhr(url, {
+                xhr("utility/panes.action", {
                     handleAs:"json",
                     method:"POST",
                     query:viewMeta,
