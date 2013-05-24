@@ -15,6 +15,21 @@
     <name>Appsone Dashboard Ear Bundle</name>
 
     <dependencies>
+        <!-- jar -->
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiCommonLib</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiConfig</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+        </dependency>
+
+
         <!-- war -->
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>
@@ -22,10 +37,47 @@
             <version>1.0</version>
             <type>war</type>
         </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiAnalyticsExtensionWar</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiApplicationExtensionWar</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiTransactionExtensionWar</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+
         <!-- ejb -->
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>
             <artifactId>uiWeb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiAnalyticsExtensionWeb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiApplicationExtensionWeb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiTransactionExtensionWeb</artifactId>
             <version>1.0</version>
             <type>ejb</type>
         </dependency>

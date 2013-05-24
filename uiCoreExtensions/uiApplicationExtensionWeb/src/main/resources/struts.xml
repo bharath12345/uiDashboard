@@ -16,13 +16,4 @@
     <constant name="struts.enable.SlashesInActionNames" value="true"/>
     <constant name="struts.patternMatcher" value="namedVariable"/>
 
-
-    <!--constant name="struts.convention.exclude.parentClassLoader" value="true" />
-    <constant name="struts.convention.action.fileProtocols" value="file,jar,vfsfile,vfszip" />
-    <constant name="struts.convention.action.mapAllMatches" value="true" />
-    <constant name="struts.convention.package.locators" value="action"/>
-
-    <constant name="struts.convention.action.includeJars" value=".*?/*.*?jar(!/)?"/-->
-
-
 </struts>

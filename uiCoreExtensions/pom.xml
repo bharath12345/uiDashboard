@@ -32,8 +32,11 @@
     </build>
 
     <modules>
-        <module>uiApplicationExtension</module>
-        <module>uiAnalyticsExtension</module>
-        <module>uiTransactionExtension</module>
+        <module>uiApplicationExtensionWeb</module>
+        <module>uiApplicationExtensionWar</module>
+        <module>uiAnalyticsExtensionWeb</module>
+        <module>uiAnalyticsExtensionWar</module>
+        <module>uiTransactionExtensionWeb</module>
+        <module>uiTransactionExtensionWar</module>
     </modules>
 </project>
