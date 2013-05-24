@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="com.appnomic" export="true" slot="main"/>
+            <module name="javax.servlet.api" export="true" slot="main"/>
+            <!--module name="struts" export="true" slot="main"/-->
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
