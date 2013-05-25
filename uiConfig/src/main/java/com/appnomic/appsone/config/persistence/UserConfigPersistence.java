@@ -45,12 +45,15 @@ public class UserConfigPersistence extends Persistence {
             uuidList.add(alertPLE.getUuid());
             LinksListEntity configPLE = LinksListEntity.getDefaultConfigPageEntity();
             uuidList.add(configPLE.getUuid());
-            LinksListEntity customPLE = LinksListEntity.getDefaultCustomPageEntity();
-            uuidList.add(customPLE.getUuid());
-            LinksListEntity nocPLE = LinksListEntity.getDefaultNocPageEntity();
+            LinksListEntity nocPLE = LinksListEntity.getDefaultApplicationPageEntity();
             uuidList.add(nocPLE.getUuid());
             LinksListEntity topoPLE = LinksListEntity.getDefaultTopologyPageEntity();
             uuidList.add(topoPLE.getUuid());
+            LinksListEntity txPLE = LinksListEntity.getDefaultTransactionPageEntity();
+            uuidList.add(txPLE.getUuid());
+            LinksListEntity compPLE = LinksListEntity.getDefaultComponentPageEntity();
+            uuidList.add(compPLE.getUuid());
+
             uuidMap.put(ActionConstants.ACCORDION.LINKS.name(), uuidList);
             uce.setUuidMap(uuidMap);
 
@@ -68,12 +71,14 @@ public class UserConfigPersistence extends Persistence {
             instance.write(alertPLE.getUuid(), json);
             json = gson.toJson(configPLE);
             instance.write(configPLE.getUuid(), json);
-            json = gson.toJson(customPLE);
-            instance.write(customPLE.getUuid(), json);
             json = gson.toJson(nocPLE);
             instance.write(nocPLE.getUuid(), json);
             json = gson.toJson(topoPLE);
             instance.write(topoPLE.getUuid(), json);
+            json = gson.toJson(txPLE);
+            instance.write(txPLE.getUuid(), json);
+            json = gson.toJson(compPLE);
+            instance.write(compPLE.getUuid(), json);
 
 
         } catch (Exception e) {

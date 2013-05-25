@@ -41,7 +41,7 @@ public class AlertsGridPersistence extends Persistence {
             ArrayList<String> uuidList = new ArrayList<String>();
             ApplicationAlertsGridEntity aag = ApplicationAlertsGridEntity.getDefaultConfig();
             uuidList.add(aag.getUuid());
-            uuidMap.put(ActionConstants.NOC.APPLICATION_ALERTS.name(), uuidList);
+            uuidMap.put(ActionConstants.APPLICATION.APPLICATION_ALERTS.name(), uuidList);
             uce.setUuidMap(uuidMap);
 
             String json = gson.toJson(uce);

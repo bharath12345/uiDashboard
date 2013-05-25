@@ -107,11 +107,11 @@ public class UtilityAction extends AbstractAction {
 		
 		////
 		
-		HashMap<String, Integer> customMap = new HashMap<String, Integer>();
-		for(ActionConstants.CUSTOM config: ActionConstants.CUSTOM.values()) {
-			customMap.put(config.name(), config.ordinal());
+		HashMap<String, Integer> txMap = new HashMap<String, Integer>();
+		for(ActionConstants.TRANSACTION config: ActionConstants.TRANSACTION.values()) {
+			txMap.put(config.name(), config.ordinal());
 		}
-		enumMap.put(ActionConstants.ACCGROUPS.CUSTOM.name(), customMap);
+		enumMap.put(ActionConstants.ACCGROUPS.TRANSACTION.name(), txMap);
 		
 		////
 		
@@ -123,14 +123,22 @@ public class UtilityAction extends AbstractAction {
 		
 		////
 		
-		HashMap<String, Integer> nocMap = new HashMap<String, Integer>();
-		for(ActionConstants.NOC config: ActionConstants.NOC.values()) {
-			nocMap.put(config.name(), config.ordinal());
+		HashMap<String, Integer> appMap = new HashMap<String, Integer>();
+		for(ActionConstants.APPLICATION config: ActionConstants.APPLICATION.values()) {
+			appMap.put(config.name(), config.ordinal());
 		}
-		enumMap.put(ActionConstants.ACCGROUPS.NOC.name(), nocMap);
+		enumMap.put(ActionConstants.ACCGROUPS.APPLICATION.name(), appMap);
 		
-		
-		return SUCCESS;
+		////
+
+        HashMap<String, Integer> compMap = new HashMap<String, Integer>();
+        for(ActionConstants.COMPONENT config: ActionConstants.COMPONENT.values()) {
+            appMap.put(config.name(), config.ordinal());
+        }
+        enumMap.put(ActionConstants.ACCGROUPS.COMPONENT.name(), compMap);
+
+
+        return SUCCESS;
 	}
 
     public static LinksListEntity getPageListEntity(String userUuid) {

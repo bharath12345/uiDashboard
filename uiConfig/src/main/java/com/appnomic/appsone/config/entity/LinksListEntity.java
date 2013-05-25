@@ -189,22 +189,15 @@ public class LinksListEntity extends AbstractConfigEntity {
         return tple;
     }
 
-    public static LinksListEntity getDefaultCustomPageEntity() {
+    public static LinksListEntity getDefaultApplicationPageEntity() {
         LinksListEntity tple = new LinksListEntity();
         List<LinkEntity> linkList = new ArrayList<LinkEntity>();
 
         LinkEntity linkEntity = tple.new LinkEntity();
-        linkEntity.setName(ActionConstants.CUSTOM.CUSTOM_LAYOUTS.name());
+        linkEntity.setName(ActionConstants.APPLICATION.APPLICATION_ALERTS.name());
         linkEntity.setUuid(UUID.randomUUID().toString());
-        linkEntity.setEnumId(ActionConstants.CUSTOM.CUSTOM_LAYOUTS.ordinal());
-        linkEntity.setType(ActionConstants.ACCTYPE.DIRECTORY.name());
-        linkList.add(linkEntity);
-
-        linkEntity = tple.new LinkEntity();
-        linkEntity.setName(ActionConstants.CUSTOM.CUSTOM_VIEWS.name());
-        linkEntity.setUuid(UUID.randomUUID().toString());
-        linkEntity.setEnumId(ActionConstants.CUSTOM.CUSTOM_VIEWS.ordinal());
-        linkEntity.setType(ActionConstants.ACCTYPE.DIRECTORY.name());
+        linkEntity.setEnumId(ActionConstants.APPLICATION.APPLICATION_ALERTS.ordinal());
+        linkEntity.setType(ActionConstants.ACCTYPE.GRID.name());
         linkList.add(linkEntity);
 
         tple.setLinkEntity(linkList.toArray(new LinkEntity[linkList.size()]));
@@ -212,23 +205,27 @@ public class LinksListEntity extends AbstractConfigEntity {
         return tple;
     }
 
-    public static LinksListEntity getDefaultNocPageEntity() {
+    public static LinksListEntity getDefaultTransactionPageEntity() {
         LinksListEntity tple = new LinksListEntity();
         List<LinkEntity> linkList = new ArrayList<LinkEntity>();
 
         LinkEntity linkEntity = tple.new LinkEntity();
-        linkEntity.setName(ActionConstants.NOC.APPLICATION_ALERTS.name());
+        linkEntity = tple.new LinkEntity();
+        linkEntity.setName(ActionConstants.TRANSACTION.TRANSACTION_GRID.name());
         linkEntity.setUuid(UUID.randomUUID().toString());
-        linkEntity.setEnumId(ActionConstants.NOC.APPLICATION_ALERTS.ordinal());
+        linkEntity.setEnumId(ActionConstants.TRANSACTION.TRANSACTION_GRID.ordinal());
         linkEntity.setType(ActionConstants.ACCTYPE.GRID.name());
         linkList.add(linkEntity);
 
-        linkEntity = tple.new LinkEntity();
-        linkEntity.setName(ActionConstants.NOC.TRANSACTION_GRID.name());
-        linkEntity.setUuid(UUID.randomUUID().toString());
-        linkEntity.setEnumId(ActionConstants.NOC.TRANSACTION_GRID.ordinal());
-        linkEntity.setType(ActionConstants.ACCTYPE.GRID.name());
-        linkList.add(linkEntity);
+        tple.setLinkEntity(linkList.toArray(new LinkEntity[linkList.size()]));
+        tple.setUuid(UUID.randomUUID().toString());
+        return tple;
+    }
+
+    public static LinksListEntity getDefaultComponentPageEntity() {
+        LinksListEntity tple = new LinksListEntity();
+        List<LinkEntity> linkList = new ArrayList<LinkEntity>();
+
 
         tple.setLinkEntity(linkList.toArray(new LinkEntity[linkList.size()]));
         tple.setUuid(UUID.randomUUID().toString());

@@ -48,7 +48,7 @@ public class ApplicationUtilityAction extends AbstractAction {
         linkEntityList = nocPLE.getLinkEntity();*/
 
         // ToDo: The below code is temporary - remove it once the persistence stuff starts working
-        linkEntityList = LinksListEntity.getDefaultNocPageEntity().getLinkEntity();
+        linkEntityList = LinksListEntity.getDefaultApplicationPageEntity().getLinkEntity();
 
 
         return SUCCESS;

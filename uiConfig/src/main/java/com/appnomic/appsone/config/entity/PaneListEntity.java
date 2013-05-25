@@ -63,10 +63,24 @@ public class PaneListEntity extends AbstractConfigEntity{
         paneList.add(paneListObj);
 
         paneListObj = tle.new PaneEntity();
-        paneListObj.setName(ActionConstants.ACCGROUPS.NOC.name());
+        paneListObj.setName(ActionConstants.ACCGROUPS.APPLICATION.name());
         paneListObj.setUuid(UUID.randomUUID().toString());
-        paneListObj.setEnumId(ActionConstants.ACCGROUPS.NOC.ordinal());
-        paneListObj.setAction("noc/links.action");
+        paneListObj.setEnumId(ActionConstants.ACCGROUPS.APPLICATION.ordinal());
+        paneListObj.setAction("application/links.action");
+        paneList.add(paneListObj);
+
+        paneListObj = tle.new PaneEntity();
+        paneListObj.setName(ActionConstants.ACCGROUPS.TRANSACTION.name());
+        paneListObj.setUuid(UUID.randomUUID().toString());
+        paneListObj.setEnumId(ActionConstants.ACCGROUPS.TRANSACTION.ordinal());
+        paneListObj.setAction("transaction/links.action");
+        paneList.add(paneListObj);
+
+        paneListObj = tle.new PaneEntity();
+        paneListObj.setName(ActionConstants.ACCGROUPS.COMPONENT.name());
+        paneListObj.setUuid(UUID.randomUUID().toString());
+        paneListObj.setEnumId(ActionConstants.ACCGROUPS.COMPONENT.ordinal());
+        paneListObj.setAction("component/links.action");
         paneList.add(paneListObj);
 
         paneListObj = tle.new PaneEntity();
@@ -74,13 +88,6 @@ public class PaneListEntity extends AbstractConfigEntity{
         paneListObj.setUuid(UUID.randomUUID().toString());
         paneListObj.setEnumId(ActionConstants.ACCGROUPS.ANALYTICS.ordinal());
         paneListObj.setAction("analytics/links.action");
-        paneList.add(paneListObj);
-
-        paneListObj = tle.new PaneEntity();
-        paneListObj.setName(ActionConstants.ACCGROUPS.CUSTOM.name());
-        paneListObj.setUuid(UUID.randomUUID().toString());
-        paneListObj.setEnumId(ActionConstants.ACCGROUPS.CUSTOM.ordinal());
-        paneListObj.setAction("custom/links.action");
         paneList.add(paneListObj);
 
         paneListObj = tle.new PaneEntity();

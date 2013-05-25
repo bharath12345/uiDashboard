@@ -30,7 +30,7 @@ public class PanesPersistence extends Persistence {
             ArrayList<String> uuidList = new ArrayList<String>();
             PaneListEntity ple = PaneListEntity.getDefaultConfig();
             uuidList.add(ple.getUuid());
-            uuidMap.put(ActionConstants.NOC.APPLICATION_ALERTS.name(), uuidList);
+            uuidMap.put(ActionConstants.APPLICATION.APPLICATION_ALERTS.name(), uuidList);
             uce.setUuidMap(uuidMap);
 
             String json = gson.toJson(uce);

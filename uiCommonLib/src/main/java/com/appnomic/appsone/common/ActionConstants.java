@@ -16,10 +16,11 @@ public interface ActionConstants {
 	}
 	
 	public enum ACCGROUPS {
-		TOPOLOGY,
-		NOC,
+		APPLICATION,
+        TRANSACTION,
+        COMPONENT,
+        TOPOLOGY,
 		ANALYTICS,
-		CUSTOM,
 		CONFIG
 	}
 	
@@ -30,7 +31,7 @@ public interface ActionConstants {
 		
 		// Now the group members
 		
-		//NOC Screens Group
+		//APPLICATION Screens Group
 		APPLICATION_ALERTS,
 		TRANSACTION_GRID,
 		
@@ -46,20 +47,22 @@ public interface ActionConstants {
 		SQL_DB_OUTLIERS
 	}
 	
-	public enum CUSTOM {
-		CUSTOM_LAYOUTS,
-		CUSTOM_VIEWS
-	}
-	
 	public enum TOPOLOGY {
 		SAMPLE_TOPOLOGY,
 		LAYERONE
 	}
 	
-	public enum NOC {
-		APPLICATION_ALERTS,
-		TRANSACTION_GRID
+	public enum APPLICATION {
+		APPLICATION_ALERTS
 	}
+
+    public enum TRANSACTION {
+        TRANSACTION_GRID
+    }
+
+    public enum COMPONENT {
+
+    }
 }
 
 
