@@ -121,8 +121,8 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/topology/n
                 dashboard.dom.TopBc.resize();
             },
 
-            setAccordion: function(nocAccordion) {
-                this.ACCORDION = nocAccordion;
+            setAccordion: function(applicationAccordion) {
+                this.ACCORDION = applicationAccordion;
             }
         });
 

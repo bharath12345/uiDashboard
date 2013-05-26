@@ -1,9 +1,9 @@
 define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", "dashboard/logger/Logger",
-    "dashboard/views/noc/abstract/AppForm"],
+    "dashboard/views/application/abstract/AppForm"],
 
     function (declare, i18n, i18nString, Logger, AppForm) {
 
-        dashboard.classnames.AppTopologyForm = "dashboard.noc.forms.application.AppTopologyForm";
+        dashboard.classnames.AppTopologyForm = "dashboard.application.forms.application.AppTopologyForm";
 
         var AppTopologyForm = declare(dashboard.classnames.AppTopologyForm, AppForm, {
 

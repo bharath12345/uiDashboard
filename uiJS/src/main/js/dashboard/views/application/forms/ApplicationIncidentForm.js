@@ -1,4 +1,4 @@
-define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/noc", "dojo/i18n!dashboard/nls/dashboard",
+define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/application/nls/application", "dojo/i18n!dashboard/nls/dashboard",
     "dijit/layout/ContentPane", "dojox/layout/GridContainer", 'dashboard/widgets/AoneDgrid', "dojo/request/xhr",
     "dojo/_base/lang", "dojo/store/Memory", "dojo/dom-construct",
     "dashboard/logger/Logger", "dashboard/helper/Scheduler", "dashboard/helper/Helper", "dashboard/abstract/AbstractForm"],
@@ -12,13 +12,13 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
 
          */
 
-        dashboard.classnames.NocApplicationIncidentForm = "dashboard.noc.forms.NocApplicationIncidentForm";
+        dashboard.classnames.ApplicationIncidentForm = "dashboard.application.forms.ApplicationIncidentForm";
 
-        var NocApplicationIncidentForm = declare(dashboard.classnames.NocApplicationIncidentForm, AbstractForm, {
+        var ApplicationIncidentForm = declare(dashboard.classnames.ApplicationIncidentForm, AbstractForm, {
 
             title: dashboardI18nString.APPLICATION_ALERTS,
             inAnalysisPane: false,
-            pageType: dashboard.pageTypes.NOC, // this is the default; in case of 'main' dashboard calls, this is overwritten in the constructor
+            pageType: dashboard.pageTypes.APPLICATION, // this is the default; in case of 'main' dashboard calls, this is overwritten in the constructor
 
             createToolbarButtons: function() {
             },
@@ -66,7 +66,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                     }
                 ];
 
-                NocApplicationIncidentForm.DATACLASS = input.applicationVO.dataActionClass;
+                ApplicationIncidentForm.DATACLASS = input.applicationVO.dataActionClass;
 
                 var metrics = input.applicationVO.metrics;
                 for (var i = 0; i < metrics.length; i++) {
@@ -78,22 +78,22 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                     col.children = [];
 
                     var subcol = {};
-                    subcol.field = metrics[i] + "_" + NocApplicationIncidentForm.CRITICAL;
-                    subcol.label = i18nString[NocApplicationIncidentForm.CRITICAL];
+                    subcol.field = metrics[i] + "_" + ApplicationIncidentForm.CRITICAL;
+                    subcol.label = i18nString[ApplicationIncidentForm.CRITICAL];
                     subcol.reorderable = true;
                     subcol.resizable = true;
                     col.children.push(subcol);
 
                     subcol = {};
-                    subcol.field = metrics[i] + "_" + NocApplicationIncidentForm.MAJOR;
-                    subcol.label = i18nString[NocApplicationIncidentForm.MAJOR];
+                    subcol.field = metrics[i] + "_" + ApplicationIncidentForm.MAJOR;
+                    subcol.label = i18nString[ApplicationIncidentForm.MAJOR];
                     subcol.reorderable = true;
                     subcol.resizable = true;
                     col.children.push(subcol);
 
                     subcol = {};
-                    subcol.field = metrics[i] + "_" + NocApplicationIncidentForm.MINOR;
-                    subcol.label = i18nString[NocApplicationIncidentForm.MINOR];
+                    subcol.field = metrics[i] + "_" + ApplicationIncidentForm.MINOR;
+                    subcol.label = i18nString[ApplicationIncidentForm.MINOR];
                     subcol.reorderable = true;
                     subcol.resizable = true;
                     col.children.push(subcol);
@@ -110,9 +110,9 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                     row.appName = apps[i].name;
                     row.id = apps[i].id;
                     for (var j = 0; j < metrics.length; j++) {
-                        row[metrics[j] + "_" + NocApplicationIncidentForm.CRITICAL] = "";
-                        row[metrics[j] + "_" + NocApplicationIncidentForm.MAJOR] = "";
-                        row[metrics[j] + "_" + NocApplicationIncidentForm.MINOR] = "";
+                        row[metrics[j] + "_" + ApplicationIncidentForm.CRITICAL] = "";
+                        row[metrics[j] + "_" + ApplicationIncidentForm.MAJOR] = "";
+                        row[metrics[j] + "_" + ApplicationIncidentForm.MINOR] = "";
                     }
                     gridata.push(row);
                 }
@@ -130,9 +130,9 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                         row.appName = "blank row";
                         row.id = " ";
                         for (var j = 0; j < metrics.length; j++) {
-                            row[metrics[j] + "_" + NocApplicationIncidentForm.CRITICAL] = " ";
-                            row[metrics[j] + "_" + NocApplicationIncidentForm.MAJOR] = " ";
-                            row[metrics[j] + "_" + NocApplicationIncidentForm.MINOR] = " ";
+                            row[metrics[j] + "_" + ApplicationIncidentForm.CRITICAL] = " ";
+                            row[metrics[j] + "_" + ApplicationIncidentForm.MAJOR] = " ";
+                            row[metrics[j] + "_" + ApplicationIncidentForm.MINOR] = " ";
                         }
                         gridata.push(row);
                     }
@@ -140,11 +140,11 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
 
                 try {
 
-                    NocApplicationIncidentForm.Grid = new Grid();
-                    NocApplicationIncidentForm.Grid.setColumnMeta(columnMeta);
-                    NocApplicationIncidentForm.Grid.setData(gridata);
-                    NocApplicationIncidentForm.Grid.render(this.innerDIV);
-                    NocApplicationIncidentForm.Grid.handleRowClick(this); // the handleRowClick() callback is invoked in this case
+                    ApplicationIncidentForm.Grid = new Grid();
+                    ApplicationIncidentForm.Grid.setColumnMeta(columnMeta);
+                    ApplicationIncidentForm.Grid.setData(gridata);
+                    ApplicationIncidentForm.Grid.render(this.innerDIV);
+                    ApplicationIncidentForm.Grid.handleRowClick(this); // the handleRowClick() callback is invoked in this case
 
                 } catch (e) {
                     console.log("exception = " + e);
@@ -152,32 +152,32 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
 
                 // assign ids to nodes
                 for (var j = 0; j < metrics.length; j++) {
-                    dojo.query("td.field-" + metrics[j] + "_" + NocApplicationIncidentForm.CRITICAL).forEach(function (node) {
+                    dojo.query("td.field-" + metrics[j] + "_" + ApplicationIncidentForm.CRITICAL).forEach(function (node) {
                         node.style.color = "red";
                     });
 
-                    dojo.query("td.field-" + metrics[j] + "_" + NocApplicationIncidentForm.MAJOR).forEach(function (node) {
+                    dojo.query("td.field-" + metrics[j] + "_" + ApplicationIncidentForm.MAJOR).forEach(function (node) {
                         node.style.color = "orange";
                     });
 
-                    dojo.query("td.field-" + metrics[j] + "_" + NocApplicationIncidentForm.MINOR).forEach(function (node) {
+                    dojo.query("td.field-" + metrics[j] + "_" + ApplicationIncidentForm.MINOR).forEach(function (node) {
                         node.style.color = "blue";
                     });
                 }
 
-                NocApplicationIncidentForm.POSTSET.metricsJson = dojo.toJson(metrics);
-                NocApplicationIncidentForm.POSTSET.dataset = [];
+                ApplicationIncidentForm.POSTSET.metricsJson = dojo.toJson(metrics);
+                ApplicationIncidentForm.POSTSET.dataset = [];
 
                 for (var i = 0; i < input.applicationVO.applications.length; i++) {
                     var apps = input.applicationVO.applications;
                     var datum = {};
                     datum.id = apps[i].id;
                     datum.name = apps[i].name;
-                    NocApplicationIncidentForm.POSTSET.dataset.push(datum);
+                    ApplicationIncidentForm.POSTSET.dataset.push(datum);
                 }
 
                 // do the first time population immediately
-                for (var i = 0; i < NocApplicationIncidentForm.POSTSET.dataset.length; i++) {
+                for (var i = 0; i < ApplicationIncidentForm.POSTSET.dataset.length; i++) {
                     this.periodicAppPost();
                 }
 
@@ -186,7 +186,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
             },
 
             handleRowClick:function (evt) {
-                var row = NocApplicationIncidentForm.Grid.getRow(evt);
+                var row = ApplicationIncidentForm.Grid.getRow(evt);
 
                 // row.element == the element with the dgrid-row class
                 // row.id == the identity of the item represented by the row
@@ -196,7 +196,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                 console.log("row id = " + dojo.toJson(row.id));
                 console.log("row data = " + dojo.toJson(row.data));
 
-                require(["dashboard/views/noc/analysis/ApplicationAnalysisPane"], lang.hitch(this, function (ApplicationAnalysisPane) {
+                require(["dashboard/views/application/analysis/ApplicationAnalysisPane"], lang.hitch(this, function (ApplicationAnalysisPane) {
                     var analysisPane = new ApplicationAnalysisPane();
                     analysisPane.launch(row.data.id);
                 }));
@@ -204,41 +204,41 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
 
             startStaggeredDatabasePolling:function () {
                 var period = 1;
-                for (var i = 0; i < NocApplicationIncidentForm.POSTSET.dataset.length; i++) {
+                for (var i = 0; i < ApplicationIncidentForm.POSTSET.dataset.length; i++) {
                     // first one launches after one second
                     // 2nd one at 4 sec, 3rd one at 7 sec and so on till --> 1 + (3*20) = 61 seconds
                     var timer = setTimeout(dojo.hitch(this, this.periodicApp), period * 1000);
-                    period += NocApplicationIncidentForm.APP_STAGGER_PERIOD;
+                    period += ApplicationIncidentForm.APP_STAGGER_PERIOD;
                     Scheduler.TIMERS.push(timer);
                 }
             },
 
             periodicApp:function () {
                 var timer = setInterval(dojo.hitch(this, this.periodicAppPost),
-                    NocApplicationIncidentForm.POSTSET.dataset.length * NocApplicationIncidentForm.APP_STAGGER_PERIOD * 1000);
+                    ApplicationIncidentForm.POSTSET.dataset.length * ApplicationIncidentForm.APP_STAGGER_PERIOD * 1000);
                 Scheduler.TIMERS.push(timer);
             },
 
             periodicAppPost:function () {
-                var appDataSet = NocApplicationIncidentForm.POSTSET.dataset[NocApplicationIncidentForm.APP_COUNTER];
+                var appDataSet = ApplicationIncidentForm.POSTSET.dataset[ApplicationIncidentForm.APP_COUNTER];
                 console.log("querying for app = " + appDataSet.name);
 
                 var viewMeta = {
                     id:appDataSet.id,
                     name:appDataSet.name,
-                    custom:[NocApplicationIncidentForm.POSTSET.metricsJson]
+                    custom:[ApplicationIncidentForm.POSTSET.metricsJson]
                 };
 
-                xhr(NocApplicationIncidentForm.DATACLASS, {
+                xhr(ApplicationIncidentForm.DATACLASS, {
                     handleAs:"json",
                     method:"POST",
                     query:viewMeta,
                     headers:Helper.JSON_HEADER
                 }).then(lang.hitch(this, this.createIncidentGridData));
 
-                NocApplicationIncidentForm.APP_COUNTER++;
-                if (NocApplicationIncidentForm.APP_COUNTER > (NocApplicationIncidentForm.POSTSET.dataset.length - 1)) {
-                    NocApplicationIncidentForm.APP_COUNTER = 0;
+                ApplicationIncidentForm.APP_COUNTER++;
+                if (ApplicationIncidentForm.APP_COUNTER > (ApplicationIncidentForm.POSTSET.dataset.length - 1)) {
+                    ApplicationIncidentForm.APP_COUNTER = 0;
                 }
             },
 
@@ -264,33 +264,33 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                             continue;
                         }
 
-                        row[metric + "_" + NocApplicationIncidentForm.CRITICAL] = payload.count[0];
-                        row[metric + "_" + NocApplicationIncidentForm.MAJOR] = payload.count[1];
-                        row[metric + "_" + NocApplicationIncidentForm.MINOR] = Math.floor(Math.random() * 100);
+                        row[metric + "_" + ApplicationIncidentForm.CRITICAL] = payload.count[0];
+                        row[metric + "_" + ApplicationIncidentForm.MAJOR] = payload.count[1];
+                        row[metric + "_" + ApplicationIncidentForm.MINOR] = Math.floor(Math.random() * 100);
 
                         break;
                     }
                 }
 
-                NocApplicationIncidentForm.Grid.addRow(row);
+                ApplicationIncidentForm.Grid.addRow(row);
                 dashboard.dom.STANDBY.hide();
             }
 
         });
 
         // static variables of this class
-        NocApplicationIncidentForm.LOG = Logger.addTimer(new Logger(dashboard.classnames.NocApplicationIncidentForm));
+        ApplicationIncidentForm.LOG = Logger.addTimer(new Logger(dashboard.classnames.ApplicationIncidentForm));
 
-        NocApplicationIncidentForm.POSTSET = {};
-        NocApplicationIncidentForm.APP_COUNTER = 0;
-        NocApplicationIncidentForm.APP_STAGGER_PERIOD = 3;
-        NocApplicationIncidentForm.CONFIG_PERIOD = 5;
-        NocApplicationIncidentForm.DATACLASS = null;
+        ApplicationIncidentForm.POSTSET = {};
+        ApplicationIncidentForm.APP_COUNTER = 0;
+        ApplicationIncidentForm.APP_STAGGER_PERIOD = 3;
+        ApplicationIncidentForm.CONFIG_PERIOD = 5;
+        ApplicationIncidentForm.DATACLASS = null;
 
-        NocApplicationIncidentForm.CRITICAL = "critical";
-        NocApplicationIncidentForm.MAJOR = "major";
-        NocApplicationIncidentForm.MINOR = "minor";
+        ApplicationIncidentForm.CRITICAL = "critical";
+        ApplicationIncidentForm.MAJOR = "major";
+        ApplicationIncidentForm.MINOR = "minor";
 
 
-        return NocApplicationIncidentForm;
+        return ApplicationIncidentForm;
     });

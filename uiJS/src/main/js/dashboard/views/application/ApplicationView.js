@@ -1,20 +1,20 @@
-define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/noc",
+define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/application/nls/application",
     "dojo/on", "dojo/_base/lang",
     "dashboard/abstract/AbstractView", "dashboard/helper/WindowManager", "dashboard/helper/ButtonHelper",
     "dashboard/helper/Scheduler"],
 
     function (declare, i18n, i18nString, on, lang, AbstractView, WindowManager, ButtonHelper, Scheduler) {
 
-        dashboard.classnames.NocView = "dashboard.noc.NocView";
+        dashboard.classnames.ApplicationView = "dashboard.application.ApplicationView";
 
-        var NocView = declare("dashboard.noc.NocView", AbstractView, {
+        var ApplicationView = declare("dashboard.application.ApplicationView", AbstractView, {
 
             newWindow: false,
 
             constructor: function(newWindow) {
                 this.newWindow = newWindow;
                 if(this.newWindow) {
-                    this.pageType = dashboard.pageTypes.NOC;
+                    this.pageType = dashboard.pageTypes.APPLICATION;
                 } else {
                     this.pageType = dashboard.pageTypes.dashboard;
                 }
@@ -22,7 +22,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
 
             // the method is called only in a NEW Window. Never in the 'central' dashboard
             createDom: function() {
-                this.createInnerMenuAndPanes(dashboard.dom.CpTopCenter.domNode, dashboard.pageTypes.NOC);
+                this.createInnerMenuAndPanes(dashboard.dom.CpTopCenter.domNode, dashboard.pageTypes.APPLICATION);
             },
 
             refreshView: function() {
@@ -33,7 +33,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                 // launch the child window
                 var wm = new WindowManager();
                 var queryParams = [];
-                queryParams.push(dashboard.pageTypes.NOC);
+                queryParams.push(dashboard.pageTypes.APPLICATION);
                 queryParams.push(this.UUID);
                 queryParams.push(this.ENUMID);
                 queryParams.push(this.NAME);
@@ -99,10 +99,10 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
                 dashboard.dom.TopBc.resize();
             },
 
-            setAccordion: function(nocAccordion) {
-                this.ACCORDION = nocAccordion;
+            setAccordion: function(applicationAccordion) {
+                this.ACCORDION = applicationAccordion;
             }
         });
 
-        return NocView;
+        return ApplicationView;
     });

@@ -4,15 +4,15 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
 
     function (declare, i18n, i18nString, Logger, AbstractForm, Form, ButtonHelper, lang, on, TableContainer, domConstruct) {
 
-        dashboard.classnames.AppForm = "dashboard.noc.abstract.AppForm";
+        dashboard.classnames.AppForm = "dashboard.application.abstract.AppForm";
 
         var AppForm = declare(dashboard.classnames.AppForm, [AbstractForm, Form], {
 
-            pageType: dashboard.pageTypes.NOC, // this is the default; in case of 'main' dashboard calls, this is overwritten in the constructor
+            pageType: dashboard.pageTypes.APPLICATION, // this is the default; in case of 'main' dashboard calls, this is overwritten in the constructor
             inAnalysisPane: true,
 
             constructor: function(pageType) {
-                // if its a new window then the pageType will be NOC, else Dashboard
+                // if its a new window then the pageType will be APPLICATION, else Dashboard
                 this.pageType = pageType;
             },
 

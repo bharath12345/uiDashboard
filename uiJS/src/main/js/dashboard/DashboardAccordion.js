@@ -36,12 +36,16 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
                             this.ACCORDIONMAP[key] = "dashboard/views/config/ConfigAccordion";
                             break;
 
-                        case "NOC":
-                            this.ACCORDIONMAP[key] = "dashboard/views/noc/NocAccordion";
+                        case "APPLICATION":
+                            this.ACCORDIONMAP[key] = "dashboard/views/application/ApplicationAccordion";
                             break;
 
-                        case "CUSTOM":
-                            this.ACCORDIONMAP[key] = "dashboard/views/custom/CustomAccordion";
+                        case "COMPONENT":
+                            this.ACCORDIONMAP[key] = "dashboard/views/component/ComponentAccordion";
+                            break;
+
+                        case "TRANSACTION":
+                            this.ACCORDIONMAP[key] = "dashboard/views/transaction/TransactionAccordion";
                             break;
 
                         case "ANALYTICS":

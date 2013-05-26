@@ -74,8 +74,8 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
 
                 on(tree, "click", lang.hitch(this, this.renderView));
 
-                // Launch the NOC Screens Application Incident Grid as the default first view
-                if(param.name[0] == "NOC") {
+                // Launch the Application Incident Grid as the default first view
+                if(param.name[0] == "APPLICATION") {
                     //tree.set('paths', [rootId, data[0].uuid]); // tried to click the tree node, but it did not work :-(
                     var localItem = {};
                     localItem.enumId = data[0].enumId;

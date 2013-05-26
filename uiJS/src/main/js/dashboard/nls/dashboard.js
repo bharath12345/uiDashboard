@@ -1,7 +1,7 @@
 define({
     root:({
 
-        title:"AppsOne NOC Screen",
+        title:"AppsOne Performance Dashboards",
         help:"Help",
         signout:"Sign out",
         //////////////////////////////////////////////////////////////////
@@ -22,8 +22,11 @@ define({
         //////////////////////////////////////////////////////////////////
 
 
-        /* ----- NOC Accordion ----- */
+        /* ----- Application Accordion ----- */
         APPLICATION_ALERTS: "Application Alerts Dashboard",
+
+
+        /* ----- Transaction Accordion ----- */
         TRANSACTION_GRID: "Transactions Grid",
         //////////////////////////////////////////////////////////////////
 

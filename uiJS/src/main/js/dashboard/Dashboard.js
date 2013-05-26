@@ -33,10 +33,11 @@ define([ 'dojo/has', 'require' ], function (has, require) {
 
     dashboard.pageTypes = {};
     dashboard.pageTypes.dashboard = "dashboard";
-    dashboard.pageTypes.NOC = "noc";
+    dashboard.pageTypes.APPLICATION = "application";
     dashboard.pageTypes.CONFIG = "config";
     dashboard.pageTypes.TOPOLOGY = "topology";
-    dashboard.pageTypes.CUSTOM = "custom";
+    dashboard.pageTypes.COMPONENT = "component";
+    dashboard.pageTypes.TRANSACTION = "transaction";
     dashboard.pageTypes.ANALYTICS = "analytics";
 
     /*

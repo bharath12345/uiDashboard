@@ -7,9 +7,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", 'crossroads', 'dashboard/logger
         var DashboardRoutes = declare(dashboard.classnames.DashboardRoutes, null, {
 
             loadMainPage:function () {
-                require(['dashboard/DashboardView', 'dashboard/DashboardAccordion', "dashboard/views/noc/NocAccordion"],
+                require(['dashboard/DashboardView', 'dashboard/DashboardAccordion', "dashboard/views/application/ApplicationAccordion"],
 
-                    function (DashboardView, DashboardAccordion, NocAccordion) {
+                    function (DashboardView, DashboardAccordion, ApplicationAccordion) {
 
                         /*
                          Include Google closure's required modules
@@ -42,7 +42,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", 'crossroads', 'dashboard/logger
                 crossroads.routed.add(console.log, console); //log all routes
                 crossroads.bypassed.add(console.log, console); //log all requests that were bypassed
 
-                dashboard.routes.push(crossroads.addRoute('/noc/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.nocMatch)));
+                dashboard.routes.push(crossroads.addRoute('/application/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.applicationMatch)));
                 dashboard.routes.push(crossroads.addRoute('/config/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.configMatch)));
                 dashboard.routes.push(crossroads.addRoute('/topology/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.topologyMatch)));
                 dashboard.routes.push(crossroads.addRoute('/custom/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.customMatch)));
@@ -52,19 +52,19 @@ define(["dojo/_base/declare", "dojo/_base/lang", 'crossroads', 'dashboard/logger
 
             },
 
-            nocMatch:function (uuid, enumid, name, type) {
-                console.log("NOC - Name = " + name + " type = " + type + " uuid = " + uuid + " enumid = " + enumid);
+            applicationMatch:function (uuid, enumid, name, type) {
+                console.log("APPLICATION - Name = " + name + " type = " + type + " uuid = " + uuid + " enumid = " + enumid);
 
-                require(["dashboard/views/noc/NocUtility", "dashboard/views/noc/NocAccordion"],
-                    function (NocUtility, NocAccordion) {
+                require(["dashboard/views/application/ApplicationUtility", "dashboard/views/application/ApplicationAccordion"],
+                    function (ApplicationUtility, ApplicationAccordion) {
                         Logger.initialize();
-                        NocUtility.InitKeyControls();
+                        ApplicationUtility.InitKeyControls();
 
-                        dashboard.enumMap.NOC = {};
-                        dashboard.enumMap.NOC[name] = parseInt(enumid);
+                        dashboard.enumMap.APPLICATION = {};
+                        dashboard.enumMap.APPLICATION[name] = parseInt(enumid);
 
-                        var nocAccordion = new NocAccordion();
-                        DashboardRoutes.createDomAndShowPage(nocAccordion, enumid, uuid, name, type);
+                        var applicationAccordion = new ApplicationAccordion();
+                        DashboardRoutes.createDomAndShowPage(applicationAccordion, enumid, uuid, name, type);
                     }
                 );
             },
