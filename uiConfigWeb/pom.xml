@@ -10,8 +10,8 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>uiTopologyExtensionWeb</artifactId>
-    <name>AppsOne Topology Extension Struts Layer</name>
+    <artifactId>uiConfigWeb</artifactId>
+    <name>AppsOne Configuration Struts Layer</name>
     <packaging>ejb</packaging>
 
     <build>
@@ -69,11 +69,7 @@
     		<artifactId>uiConfigLib</artifactId>
             <version>${uiConfigLib.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.appnomic.dashboard.beta</groupId>
-    		<artifactId>uiExtensionLib</artifactId>
-            <version>${uiExtension.version}</version>
-        </dependency>
+
 
 
         <!-- Other AppsOne Services ******************************************************************************** -->

@@ -18,10 +18,11 @@
         <camel-version>2.10.3</camel-version>
 
         <uiCommonLib.version>1.0</uiCommonLib.version>
-		<uiConfig.version>1.0</uiConfig.version>
-		<uiJS.version>1.0</uiJS.version>
-		<uiWeb.version>1.0</uiWeb.version>
-        <uiExtension.version>1.0</uiExtension.version>
+        <uiCommonWeb.version>1.0</uiCommonWeb.version>
+        <uiConfigLib.version>1.0</uiConfigLib.version>
+        <uiConfigWeb.version>1.0</uiConfigWeb.version>
+        <uiJS.version>1.0</uiJS.version>
+		<uiExtension.version>1.0</uiExtension.version>
         <uiExtensionXmlBeans.version>1.0</uiExtensionXmlBeans.version>
     </properties>
 
@@ -33,14 +34,15 @@
     <name>UI Dashboards</name>
     
     <modules>
-		<module>uiExtensionXmlBeans</module>
-        <module>uiCommonLib</module>
-        <module>uiConfig</module>
-        <module>uiWeb</module>
-        <module>uiExtensionLib</module>
+		<module>uiCommonLib</module>
+        <module>uiCommonWeb</module>
+        <module>uiConfigLib</module>
+        <module>uiConfigWeb</module>
         <module>uiCoreExtensions</module>
-        <module>uiJS</module>
         <module>uiEAR</module>
+        <module>uiExtensionLib</module>
+        <module>uiExtensionXmlBeans</module>
+        <module>uiJS</module>
     </modules>
 
 </project>

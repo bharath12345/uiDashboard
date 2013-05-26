@@ -1,4 +1,4 @@
-package com.appnomic.appsone.config.action;
+package com.appnomic.appsone.ui.extension.config.action;
 
 import com.appnomic.appsone.common.AbstractAction;
 import com.appnomic.appsone.config.entity.LinksListEntity;
@@ -48,7 +48,7 @@ public class ConfigUtilityAction extends AbstractAction {
         linkEntityList = nocPLE.getLinkEntity();*/
 
         // ToDo: The below code is temporary - remove it once the persistence stuff starts working
-        linkEntityList = LinksListEntity.getDefaultConfigPageEntity().getLinkEntity();
+        linkEntityList = LinksListEntity.getDefaultTopologyPageEntity().getLinkEntity();
 
 
         return SUCCESS;

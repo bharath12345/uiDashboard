@@ -65,8 +65,8 @@
         </dependency>
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>
-    		<artifactId>uiConfig</artifactId>
-            <version>${uiConfig.version}</version>
+    		<artifactId>uiConfigLib</artifactId>
+            <version>${uiConfigLib.version}</version>
         </dependency>
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>

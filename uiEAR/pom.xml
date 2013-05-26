@@ -16,19 +16,10 @@
 
     <dependencies>
         <!-- jar -->
-        <dependency>
-            <groupId>com.appnomic.dashboard.beta</groupId>
-            <artifactId>uiCommonLib</artifactId>
-            <version>1.0</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.appnomic.dashboard.beta</groupId>
-            <artifactId>uiConfig</artifactId>
-            <version>1.0</version>
-            <type>jar</type>
-        </dependency>
-
+        <!-- Dont explicitly package any JARs -
+            1) The EJB dependencies will get packaged in the lib of EAR
+            2) The WAR dependencies will get packaged in the lib of WAR
+        -->
 
         <!-- war -->
         <dependency>
@@ -55,11 +46,29 @@
             <version>1.0</version>
             <type>war</type>
         </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiComponentExtensionWar</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiTopologyExtensionWar</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>
 
         <!-- ejb -->
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>
-            <artifactId>uiWeb</artifactId>
+            <artifactId>uiCommonWeb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiConfigWeb</artifactId>
             <version>1.0</version>
             <type>ejb</type>
         </dependency>
@@ -78,6 +87,18 @@
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>
             <artifactId>uiTransactionExtensionWeb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiComponentExtensionWeb</artifactId>
+            <version>1.0</version>
+            <type>ejb</type>
+        </dependency>
+        <dependency>
+            <groupId>com.appnomic.dashboard.beta</groupId>
+            <artifactId>uiTopologyExtensionWeb</artifactId>
             <version>1.0</version>
             <type>ejb</type>
         </dependency>

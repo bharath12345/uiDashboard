@@ -8,8 +8,8 @@
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>uiWeb</artifactId>
-	<name>AppsOne UI Servlets, Filters, Actions, Struts</name>
+	<artifactId>uiCommonWeb</artifactId>
+	<name>AppsOne UI Common Servlets, Filters, Actions, Struts</name>
 	<packaging>ejb</packaging>
 
     <build>
@@ -120,14 +120,13 @@
             <artifactId>uiCommonLib</artifactId>
             <version>${uiCommonLib.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.appnomic.dashboard.beta</groupId>
-            <artifactId>uiConfig</artifactId>
-            <version>${uiConfig.version}</version>
+            <artifactId>uiConfigLib</artifactId>
+            <version>${uiConfigLib.version}</version>
         </dependency>
 
-		<!-- Other AppsOne Services ******************************************************************************** -->
+        <!-- Other AppsOne Services ******************************************************************************** -->
         
     </dependencies>
 

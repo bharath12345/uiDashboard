@@ -3,19 +3,30 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
-    <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="uiJS" />
-    <orderEntry type="module" module-name="uiAnalyticsExtensionWar" />
-    <orderEntry type="module" module-name="uiApplicationExtensionWar" />
-    <orderEntry type="module" module-name="uiTransactionExtensionWar" />
-    <orderEntry type="module" module-name="uiComponentExtensionWar" />
-    <orderEntry type="module" module-name="uiTopologyExtensionWar" />
-    <orderEntry type="module" module-name="uiCommonWeb" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts2-core:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts.xwork:xwork-core:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
+    <orderEntry type="library" name="Maven: ognl:ognl:3.0.6" level="project" />
+    <orderEntry type="library" name="Maven: javassist:javassist:3.11.0.GA" level="project" />
+    <orderEntry type="library" name="Maven: asm:asm:3.3" level="project" />
+    <orderEntry type="library" name="Maven: asm:asm-commons:3.3" level="project" />
+    <orderEntry type="library" name="Maven: asm:asm-tree:3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.19" level="project" />
+    <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts2-convention-plugin:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts2-json-plugin:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts2-spring-plugin:2.3.8" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.struts:struts2-config-browser-plugin:2.3.8" level="project" />
+    <orderEntry type="module" module-name="uiCommonLib" />
     <orderEntry type="library" name="Maven: org.jdom:jdom:1.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.camel:camel-core:2.10.3" level="project" />
@@ -54,37 +65,15 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:3.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.0.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jms:3.0.7.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.struts:struts2-core:2.3.8" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.struts.xwork:xwork-core:2.3.8" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.1" level="project" />
-    <orderEntry type="library" name="Maven: ognl:ognl:3.0.6" level="project" />
-    <orderEntry type="library" name="Maven: javassist:javassist:3.11.0.GA" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm:3.3" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm-commons:3.3" level="project" />
-    <orderEntry type="library" name="Maven: asm:asm-tree:3.3" level="project" />
-    <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.19" level="project" />
-    <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.2.2" level="project" />
-    <orderEntry type="library" name="Maven: commons-io:commons-io:2.0.1" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.struts:struts2-convention-plugin:2.3.8" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.struts:struts2-json-plugin:2.3.8" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.struts:struts2-config-browser-plugin:2.3.8" level="project" />
-    <orderEntry type="module" module-name="uiCommonLib" />
-    <orderEntry type="module" module-name="uiConfigLib" />
+    <orderEntry type="module" module-name="uiConfig" />
     <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb:0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb-api:0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:12.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
-    <orderEntry type="module" module-name="uiConfigWeb" />
-    <orderEntry type="library" name="Maven: org.apache.struts:struts2-spring-plugin:2.3.8" level="project" />
-    <orderEntry type="module" module-name="uiAnalyticsExtensionWeb" />
     <orderEntry type="module" module-name="uiExtensionLib" />
     <orderEntry type="library" name="Maven: org.apache.xmlbeans:xmlbeans-xmlpublic:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.appnomic.appsone.dashboard:uiExtensionXmlBeans:1.0" level="project" />
-    <orderEntry type="module" module-name="uiApplicationExtension" />
-    <orderEntry type="module" module-name="uiTransactionExtension" />
-    <orderEntry type="module" module-name="uiComponentExtensionWeb" />
-    <orderEntry type="module" module-name="uiTopologyExtensionWeb" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.8.1" level="project" />
   </component>
 </module>

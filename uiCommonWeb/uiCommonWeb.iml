@@ -7,9 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
-      <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -66,7 +65,7 @@
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-json-plugin:2.3.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-config-browser-plugin:2.3.8" level="project" />
     <orderEntry type="module" module-name="uiCommonLib" />
-    <orderEntry type="module" module-name="uiConfig" />
+    <orderEntry type="module" module-name="uiConfigLib" />
     <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb:0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.iq80.leveldb:leveldb-api:0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:12.0" level="project" />
