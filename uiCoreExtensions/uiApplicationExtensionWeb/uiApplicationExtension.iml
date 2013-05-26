@@ -7,8 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
+      <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -25,7 +26,6 @@
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-convention-plugin:2.3.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-json-plugin:2.3.8" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.struts:struts2-spring-plugin:2.3.8" level="project" />
     <orderEntry type="library" name="Maven: org.apache.struts:struts2-config-browser-plugin:2.3.8" level="project" />
     <orderEntry type="module" module-name="uiCommonLib" />
     <orderEntry type="library" name="Maven: org.jdom:jdom:1.1" level="project" />
