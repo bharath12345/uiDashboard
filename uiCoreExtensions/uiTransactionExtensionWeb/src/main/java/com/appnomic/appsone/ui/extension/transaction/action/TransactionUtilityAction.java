@@ -1,17 +1,17 @@
-package com.appnomic.appsone.ui.extension.analytics.action;
+package com.appnomic.appsone.ui.extension.transaction.action;
 
-import java.util.Map;
-
-import com.appnomic.appsone.config.entity.LinksListEntity;
 import com.appnomic.appsone.common.AbstractAction;
+import com.appnomic.appsone.config.entity.LinksListEntity;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
+import java.util.Map;
+
 @ParentPackage("json-default")
-@Namespace("/analytics")
-public class AnalyticsUtilityAction extends AbstractAction {
+@Namespace("/transaction")
+public class TransactionUtilityAction extends AbstractAction {
 
 	private LinksListEntity.LinkEntity[] linkEntityList;
 	private Map<String, String[]> param;
@@ -44,11 +44,12 @@ public class AnalyticsUtilityAction extends AbstractAction {
 	public String pagesAction() {
 		param = getParameters();
 
-        /*LinksListEntity alertPLE = UtilityAction.getPageListEntity(userUuid);
-        linkEntityList = alertPLE.getLinkEntity();*/
+        /*LinksListEntity nocPLE = UtilityAction.getPageListEntity(userUuid);
+        linkEntityList = nocPLE.getLinkEntity();*/
 
         // ToDo: The below code is temporary - remove it once the persistence stuff starts working
-        linkEntityList = LinksListEntity.getDefaultAnalyticsPageEntity().getLinkEntity();
+        linkEntityList = LinksListEntity.getDefaultTransactionPageEntity().getLinkEntity();
+
 
         return SUCCESS;
 	}

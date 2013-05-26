@@ -22,7 +22,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>uiExtensionXML</servlet-name>
-        <url-pattern>/uiExtension</url-pattern>
+        <url-pattern>/topology/uiExtension</url-pattern>
     </servlet-mapping>
 
 </web-app>
