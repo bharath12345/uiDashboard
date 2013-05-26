@@ -1,8 +1,10 @@
 define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/topology/nls/topology", "dashboard/logger/Logger",
-    "dojox/layout/GridContainer", "dijit/TitlePane", "dijit/layout/ContentPane", "dojo/request/xhr", "dojo/_base/lang", "dojo/dom-construct",
+    "dojox/layout/GridContainer", "dijit/TitlePane", "dijit/layout/ContentPane", "dojo/request/xhr", "dojo/_base/lang",
+    "dojo/dom-construct", "dojo/dom",
     "dashboard/helper/Helper", "dashboard/helper/Scheduler", "dashboard/views/topology/TopologyForm"],
 
-    function (declare, i18n, i18nString, Logger, GridContainer, TitlePane, ContentPane, xhr, lang, domConstruct, Helper, Scheduler, TopologyForm) {
+    function (declare, i18n, i18nString, Logger, GridContainer, TitlePane, ContentPane, xhr, lang, domConstruct, dom,
+              Helper, Scheduler, TopologyForm) {
 
         dashboard.classnames.ConnectionStatus = "dashboard.topology.forms.SampleTopologyForm.ConnectionStatus";
 
@@ -201,7 +203,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/topology/n
             createEndpoint:function (endPointsArray, endPointType, width, height) {
                 var styleString = "width: " + width + "; height: " + height + ";";
                 for (var i = 0; i < endPointsArray.length; i++) {
-                    var divCol = dojo.byId(endPointType + RenderNodes.ROW_SUFFIX);
+                    var divCol = dom.byId(endPointType + RenderNodes.ROW_SUFFIX);
                     var node = domConstruct.create("div");
                     node.id = endPointType + "_" + endPointsArray[i] + RenderNodes.ENDPOINT_SUFFIX;
                     node.className = "topoIconContainer";
@@ -321,7 +323,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/topology/n
                         innerPanes[i] = innerPane;
                     }
 
-                    var gridContainer = new GridContainer({nbZones:1, isAutoOrganized:true}, dojo.byId(name + RenderNodes.COLUMN_SUFFIX));
+                    var gridContainer = new GridContainer({nbZones:1, isAutoOrganized:true}, dom.byId(name + RenderNodes.COLUMN_SUFFIX));
                     gridContainer.disableDnd();
 
                     for (var i = 0; i < layers.length; i++) {

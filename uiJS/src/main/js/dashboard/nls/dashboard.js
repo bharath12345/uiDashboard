@@ -8,9 +8,10 @@ define({
 
         /* ----- Top Accordion ----- */
         TOPOLOGY:"Topology",
-        NOC:"Command Center Screens",
+        APPLICATION:"Application",
         ANALYTICS: "Analytics",
-        CUSTOM: "Custom Views and Layouts",
+        COMPONENT: "Component",
+        TRANSACTION: "Transaction",
         CONFIG: "Configuration",
         //////////////////////////////////////////////////////////////////
 

@@ -1,9 +1,11 @@
-define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/noc", "dojo/i18n!dashboard/nls/dashboard", "dashboard/logger/Logger",
+define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/noc", "dojo/i18n!dashboard/nls/dashboard",
+    "dashboard/logger/Logger", "dojo/dom",
     "dijit/TitlePane", "dojox/layout/GridContainer", "dojo/request/xhr", "dojo/_base/lang",
     "dashboard/helper/Scheduler", "dashboard/helper/Helper", "dashboard/abstract/AbstractForm",
     "dashboard/widgets/AoneGridContainer"],
 
-    function (declare, i18n, i18nString, dashboardI18nString, Logger, TitlePane, GridContainer, xhr, lang, Scheduler, Helper, AbstractForm, AoneGridContainer) {
+    function (declare, i18n, i18nString, dashboardI18nString, Logger, dom,
+              TitlePane, GridContainer, xhr, lang, Scheduler, Helper, AbstractForm, AoneGridContainer) {
 
         dashboard.classnames.TxGridData = "dashboard.noc.forms.NocTransactionGridForm.TxGridData";
 
@@ -34,7 +36,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/noc/nls/no
             fillText:function (id, text, number, bgColor) {
                 console.log("id = " + id);
                 Helper.removeChildren(document.getElementById(id));
-                var node = dojo.byId(id);
+                var node = dom.byId(id);
                 node.innerHTML = text;
                 node.style.fontSize = "11px";
                 node.style.fontWeight = "600";

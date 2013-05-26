@@ -1,8 +1,8 @@
-define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", "dojo/on", "dojo/_base/lang",
+define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", "dojo/on", "dojo/_base/lang", "dojo/dom",
     "dojo/store/Memory", "dashboard/widgets/AccordionTreeObjectStoreModel", "dashboard/widgets/AccordionTree",
     "dashboard/logger/Logger", "dashboard/helper/Scheduler"],
 
-    function (declare, i18n, i18nString, on, lang, Memory, ObjectStoreModel, Tree, Logger, Scheduler) {
+    function (declare, i18n, i18nString, on, lang, dom, Memory, ObjectStoreModel, Tree, Logger, Scheduler) {
 
         dashboard.classnames.AbstractAccordion = "dashboard.abstract.AbstractAccordion";
 
@@ -69,7 +69,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
 
                 // Create the Tree.
                 var tree = new Tree({model:myModel, showRoot: false, openOnClick: true});
-                tree.placeAt(dojo.byId(param.name[0]));
+                tree.placeAt(dom.byId(param.name[0]));
                 tree.startup();
 
                 on(tree, "click", lang.hitch(this, this.renderView));

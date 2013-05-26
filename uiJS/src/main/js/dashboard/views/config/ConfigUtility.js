@@ -1,7 +1,8 @@
-define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/config/nls/config", "dojo/request/xhr", "dijit/Dialog",
+define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/config/nls/config",
+    "dojo/request/xhr", "dijit/Dialog", "dojo/dom",
     "dashboard/logger/Logger", "dashboard/helper/Helper", "dojo/store/Memory", "dojo/dom-construct"],
 
-    function (declare, i18n, i18nString, xhr, Dialog, Logger, Helper, Memory, domConstruct) {
+    function (declare, i18n, i18nString, xhr, Dialog, dom, Logger, Helper, Memory, domConstruct) {
 
         dashboard.classnames.ConfigUtility = "dashboard.config.ConfigUtility";
 
@@ -47,7 +48,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/config/nls
         };
 
         ConfigUtility.getConfigDiv = function (attribute, type) {
-            var divToAdd = dojo.byId(attribute + type);
+            var divToAdd = dom.byId(attribute + type);
             divToAdd.style.margin = 1;
             //divToAdd.style.paddingLeft=1;
 
