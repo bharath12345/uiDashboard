@@ -40,5 +40,7 @@
         <module>uiTransactionExtensionWar</module>
         <module>uiComponentExtensionWeb</module>
         <module>uiComponentExtensionWar</module>
+        <module>uiTopologyExtensionWeb</module>
+        <module>uiTopologyExtensionWar</module>
     </modules>
 </project>
