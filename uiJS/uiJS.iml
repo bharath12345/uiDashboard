@@ -9,6 +9,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/js/dijit" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/js/dojo" />
+      <excludeFolder url="file://$MODULE_DIR$/src/main/js/dojo-release-1.9.0-src" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/js/dojox" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/js/util" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
