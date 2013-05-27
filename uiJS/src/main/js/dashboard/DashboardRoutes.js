@@ -45,8 +45,9 @@ define(["dojo/_base/declare", "dojo/_base/lang", 'crossroads', 'dashboard/logger
                 dashboard.routes.push(crossroads.addRoute('/application/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.applicationMatch)));
                 dashboard.routes.push(crossroads.addRoute('/config/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.configMatch)));
                 dashboard.routes.push(crossroads.addRoute('/topology/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.topologyMatch)));
-                dashboard.routes.push(crossroads.addRoute('/custom/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.customMatch)));
+                dashboard.routes.push(crossroads.addRoute('/component/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.componentMatch)));
                 dashboard.routes.push(crossroads.addRoute('/analytics/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.analyticsMatch)));
+                dashboard.routes.push(crossroads.addRoute('/transaction/:uuid:/:enumid:/:name:/:type:', lang.hitch(this, this.transactionMatch)));
 
                 crossroads.parse(hashString);
 
@@ -97,16 +98,16 @@ define(["dojo/_base/declare", "dojo/_base/lang", 'crossroads', 'dashboard/logger
                     });
             },
 
-            customMatch: function(uuid, enumid, name, type) {
-                console.log("CUSTOM - Name = " + name + " type = " + type + " uuid = " + uuid + " enumid = " + enumid);
+            componentMatch: function(uuid, enumid, name, type) {
+                console.log("Component - Name = " + name + " type = " + type + " uuid = " + uuid + " enumid = " + enumid);
 
-                require(["dashboard/views/custom/CustomAccordion"],
-                    function (CustomAccordion) {
-                        dashboard.enumMap.CUSTOM = {};
-                        dashboard.enumMap.CUSTOM[name] = parseInt(enumid);
+                require(["dashboard/views/component/ComponentAccordion"],
+                    function (ComponentAccordion) {
+                        dashboard.enumMap.COMPONENT = {};
+                        dashboard.enumMap.COMPONENT[name] = parseInt(enumid);
 
-                        var customAccordion = new CustomAccordion();
-                        DashboardRoutes.createDomAndShowPage(customAccordion, enumid, uuid, name, type);
+                        var componentAccordion = new ComponentAccordion();
+                        DashboardRoutes.createDomAndShowPage(componentAccordion, enumid, uuid, name, type);
                     }
                 );
             },
@@ -121,6 +122,20 @@ define(["dojo/_base/declare", "dojo/_base/lang", 'crossroads', 'dashboard/logger
 
                         var analyticsAccordion = new AnalyticsAccordion();
                         DashboardRoutes.createDomAndShowPage(analyticsAccordion, enumid, uuid, name, type);
+                    }
+                );
+            },
+
+            transactionMatch: function(uuid, enumid, name, type) {
+                console.log("Transaction - Name = " + name + " type = " + type + " uuid = " + uuid + " enumid = " + enumid);
+
+                require(["dashboard/views/transaction/TransactionAccordion"],
+                    function (TransactionAccordion) {
+                        dashboard.enumMap.TRANSACTION = {};
+                        dashboard.enumMap.TRANSACTION[name] = parseInt(enumid);
+
+                        var transactionAccordion = new TransactionAccordion();
+                        DashboardRoutes.createDomAndShowPage(transactionAccordion, enumid, uuid, name, type);
                     }
                 );
             }

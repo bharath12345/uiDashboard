@@ -16,14 +16,14 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
 
                 switch(parseInt(enumId)) {
                     case dashboard.enumMap.APPLICATION.APPLICATION_ALERTS:
-                        require(["dashboard/views/application/forms/ApplicationApplicationIncidentForm"], lang.hitch(this, function (ApplicationApplicationIncidentForm) {
-                            Helper.createView(this.applicationView, this.applicationView.pageType, new ApplicationApplicationIncidentForm(this.applicationView.pageType));
+                        require(["dashboard/views/application/forms/ApplicationIncidentForm"], lang.hitch(this, function (ApplicationIncidentForm) {
+                            Helper.createView(this.applicationView, this.applicationView.pageType, new ApplicationIncidentForm(this.applicationView.pageType));
                         }));
                         break;
 
                     case dashboard.enumMap.APPLICATION.TRANSACTION_GRID:
-                        require(["dashboard/views/application/forms/ApplicationTransactionGridForm"], lang.hitch(this, function (ApplicationTransactionGridForm) {
-                            Helper.createView(this.applicationView, this.applicationView.pageType, new ApplicationTransactionGridForm(this.applicationView.pageType));
+                        require(["dashboard/views/application/forms/TransactionGridForm"], lang.hitch(this, function (TransactionGridForm) {
+                            Helper.createView(this.applicationView, this.applicationView.pageType, new TransactionGridForm(this.applicationView.pageType));
                         }));
                         break;
 
