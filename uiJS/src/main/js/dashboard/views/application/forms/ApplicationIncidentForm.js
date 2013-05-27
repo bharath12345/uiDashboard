@@ -32,7 +32,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
                 this.attr('content', this.innerDIV);
 
                 var viewMeta = {};
-                xhr("alert/ApplicationMeta.action", {
+                xhr("application/ApplicationMeta.action", {
                     handleAs:"json",
                     method:"POST",
                     query:viewMeta,
