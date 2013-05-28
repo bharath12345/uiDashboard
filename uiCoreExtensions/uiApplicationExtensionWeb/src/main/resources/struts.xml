@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-"http://struts.apache.org/dtds/struts-2.0.dtd">
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
 
-	<!-- For the purposes of development, we will leave devMode set to true. 
-		This allows several things to occur including provision of debugging level 
-		information on error pages as well as reloading of various resources with 
-		each request. -->
-	<constant name="struts.devMode" value="true" />
+    <!-- For the purposes of development, we will leave devMode set to true.
+         This allows several things to occur including provision of debugging level
+         information on error pages as well as reloading of various resources with
+         each request. -->
+    <constant name="struts.devMode" value="true"/>
 
     <!-- Below ones are for improved URL mapping -->
     <constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
     <constant name="struts.enable.SlashesInActionNames" value="true"/>
     <constant name="struts.patternMatcher" value="namedVariable"/>
+
+    <!-- Define the validator manager that process EJB annotations in custom validators -->
+    <bean type="com.opensymphony.xwork2.validator.ActionValidatorManager"
+          name="ejbAnnotationValidatorManager"
+          class="com.appnomic.appsone.strutsejb.EJBAnnotationProcessorValidatorManager"/>
+    <!-- Tell struts use our implementation over default "struts" defined in struts-default.xml -->
+    <!-- This constant name is documented in org.apache.struts2.config.BeanSelectionProvider -->
+    <constant name="struts.actionValidatorManager" value="ejbAnnotationValidatorManager"/>
+
+    <package name="base-package" extends="struts-default">
+        <interceptors>
+            <interceptor name="ejbAnnotationProcessor"
+                         class="com.appnomic.appsone.strutsejb.EJBAnnotationProcessorInterceptor"/>
+            <interceptor-stack name="baseStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="ejbAnnotationProcessor"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="baseStack"/>
+    </package>
 
 </struts>

@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
     <display-name>AppsOne UI Extension for Application Pane</display-name>
+
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
@@ -24,5 +25,7 @@
         <servlet-name>uiExtensionXML</servlet-name>
         <url-pattern>/analytics/uiExtension</url-pattern>
     </servlet-mapping>
+
+
 
 </web-app>
