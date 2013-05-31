@@ -9,7 +9,9 @@ import com.opensymphony.xwork2.interceptor.Interceptor;
  * Time: 10:43 AM
  */
 public class EJBAnnotationProcessorInterceptor implements Interceptor {
+
     public String intercept(ActionInvocation ai) throws Exception {
+        System.out.println("EJBAnnotationProcessorInterceptor invoked!");
         EJBAnnotationProcessor.process(ai.getAction());
         return ai.invoke();
     }

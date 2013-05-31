@@ -24,13 +24,13 @@
     <!-- This constant name is documented in org.apache.struts2.config.BeanSelectionProvider -->
     <constant name="struts.actionValidatorManager" value="ejbAnnotationValidatorManager"/>
 
-    <package name="base-package" extends="struts-default">
+    <package name="default" extends="struts-default">
         <interceptors>
             <interceptor name="ejbAnnotationProcessor"
                          class="com.appnomic.appsone.strutsejb.EJBAnnotationProcessorInterceptor"/>
             <interceptor-stack name="baseStack">
-                <interceptor-ref name="defaultStack"/>
                 <interceptor-ref name="ejbAnnotationProcessor"/>
+                <interceptor-ref name="defaultStack"/>
             </interceptor-stack>
         </interceptors>
         <default-interceptor-ref name="baseStack"/>

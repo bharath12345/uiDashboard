@@ -2,7 +2,8 @@ package com.appnomic.appsone.ui.extension.application.action;
 
 import com.appnomic.appsone.common.AbstractAction;
 import com.appnomic.appsone.common.TimeUtility;
-import com.appnomic.appsone.ui.extension.application.viewobject.alert.ApplicationMetaVO;
+import com.appnomic.appsone.ui.extension.application.viewobject.alert.RealTimeAlertMetaVO;
+import com.appnomic.appsone.ui.extension.application.viewobject.alert.RealTimeAlertVO;
 import com.appnomic.model.AlertData;
 import com.appnomic.service.api.AlertDataDao;
 import org.apache.struts2.convention.annotation.Action;
@@ -13,6 +14,7 @@ import org.apache.struts2.convention.annotation.Result;
 import javax.ejb.EJB;
 import javax.naming.Context;
 import javax.naming.InitialContext;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +31,8 @@ public class AlertRealTime extends AbstractAction {
     private AlertDataDao alertDataDao;
 
     private Map<String, String[]> param;
-    private ApplicationMetaVO applicationMetaVO;
+    private RealTimeAlertMetaVO alertMetaVO;
+    private List<RealTimeAlertVO> realTimeAlertVOList;
 
     public void setAlertDataDao(AlertDataDao alertDataDao){
         this.alertDataDao = alertDataDao;
@@ -43,19 +46,26 @@ public class AlertRealTime extends AbstractAction {
         this.param = param;
     }
 
-    public ApplicationMetaVO getApplicationVO() {
-        return applicationMetaVO;
+    public RealTimeAlertMetaVO getAlertMetaVO() {
+        return alertMetaVO;
     }
 
-    public void setApplicationVO(ApplicationMetaVO applicationVO) {
-        this.applicationMetaVO = applicationVO;
+    public void setAlertMetaVO(RealTimeAlertMetaVO alertMetaVO) {
+        this.alertMetaVO = alertMetaVO;
     }
 
+    public List<RealTimeAlertVO> getRealTimeAlertVOList() {
+        return realTimeAlertVOList;
+    }
 
-    @Action(value="EjbApplicationMeta", results = {
+    public void setRealTimeAlertVOList(List<RealTimeAlertVO> realTimeAlertVOList) {
+        this.realTimeAlertVOList = realTimeAlertVOList;
+    }
+
+    @Action(value="RealTimeAlertMeta", results = {
             @Result(name="success", type="json", params = {
                     "excludeProperties",
-                    "session,SUCCESS,ERROR,alertDataService,componentDataService,applicationDataService,applicationDataVO",
+                    "session,SUCCESS,ERROR,realTimeAlertVOList",
                     "enableGZIP", "true",
                     "encoding", "UTF-8",
                     "noCache","true",
@@ -64,9 +74,36 @@ public class AlertRealTime extends AbstractAction {
     public String applicationAlertMetaAction() {
         param = getParameters();
 
-        applicationMetaVO = new ApplicationMetaVO();
+        alertMetaVO = new RealTimeAlertMetaVO();
 
-        applicationMetaVO.setDataActionClass("application/ApplicationData.action");
+        alertMetaVO.setDataActionClass("application/RealTimeAlertMeta.action");
+
+        String [] columns = new String[8];
+        columns[0] = "id";
+        columns[1] = "message";
+        columns[2] = "title";
+        columns[3] = "txnId";
+        columns[4] = "appId";
+        columns[5] = "appName";
+        columns[6] = "txnName";
+        columns[7] = "createdTime";
+
+        return SUCCESS;
+    }
+
+    @Action(value="RealTimeAlertData", results = {
+            @Result(name="success", type="json", params = {
+                    "excludeProperties",
+                    "session,SUCCESS,ERROR,alertMetaVO",
+                    "enableGZIP", "true",
+                    "encoding", "UTF-8",
+                    "noCache","true",
+                    "excludeNullProperties","true"
+            })})
+    public String applicationAlertDataAction() {
+        param = getParameters();
+
+        realTimeAlertVOList = new ArrayList<RealTimeAlertVO>();
 
         String[] startEndTimes = TimeUtility.get1YearStartEnd();
         System.out.println("Times = ["+startEndTimes[0] + "] [" + startEndTimes[1] + "]");
@@ -87,6 +124,20 @@ public class AlertRealTime extends AbstractAction {
             System.out.println("alerts are " +  allAlerts.size());
         }else{
             System.out.println("alerts are null");
+        }
+
+        for(AlertData alertData : allAlerts) {
+            RealTimeAlertVO realTimeAlertVO = new RealTimeAlertVO();
+            realTimeAlertVOList.add(realTimeAlertVO);
+
+            realTimeAlertVO.setAppId(alertData.getAppId());
+            realTimeAlertVO.setAppName(alertData.getAppName());
+            realTimeAlertVO.setCreatedTime(alertData.getCreatedTime());
+            realTimeAlertVO.setId(alertData.getId());
+            realTimeAlertVO.setMessage(alertData.getMessage());
+            realTimeAlertVO.setTitle(alertData.getTitle());
+            realTimeAlertVO.setTxnId(alertData.getTxnId());
+            realTimeAlertVO.setTxnName(alertData.getTxnName());
         }
 
         return SUCCESS;
