@@ -11,6 +11,8 @@ import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
 import javax.ejb.EJB;
+import javax.naming.Context;
+import javax.naming.InitialContext;
 import java.util.List;
 import java.util.Map;
 
@@ -68,6 +70,17 @@ public class AlertRealTime extends AbstractAction {
 
         String[] startEndTimes = TimeUtility.get1YearStartEnd();
         System.out.println("Times = ["+startEndTimes[0] + "] [" + startEndTimes[1] + "]");
+
+        if(alertDataDao == null) {
+            System.out.println("ejb lookup through injectors failed");
+            try {
+                Context context = new InitialContext();
+                alertDataDao = (AlertDataDao) context.lookup("java:global/appsone-persistence/appsone-service-api-impl/AlertDataDaoImpl!com.appnomic.service.api.AlertDataDao");
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
 
         List<AlertData> allAlerts = alertDataDao.fetchAlerts(startEndTimes[0],startEndTimes[1]);
         if (allAlerts!=null){
