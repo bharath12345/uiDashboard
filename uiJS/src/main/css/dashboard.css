@@ -351,7 +351,11 @@ cubism-header {
     z-index: 2;
 }
 
-
+/* ---------- GridX ---------*/
+.gridx {
+    height: 100%;
+    width: 100%;
+}
 
 
 

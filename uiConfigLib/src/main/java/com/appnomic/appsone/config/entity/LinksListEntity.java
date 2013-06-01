@@ -200,6 +200,13 @@ public class LinksListEntity extends AbstractConfigEntity {
         linkEntity.setType(ActionConstants.ACCTYPE.GRID.name());
         linkList.add(linkEntity);
 
+        linkEntity = tple.new LinkEntity();
+        linkEntity.setName(ActionConstants.APPLICATION.JBOSS_PROTO_ALERTS.name());
+        linkEntity.setUuid(UUID.randomUUID().toString());
+        linkEntity.setEnumId(ActionConstants.APPLICATION.JBOSS_PROTO_ALERTS.ordinal());
+        linkEntity.setType(ActionConstants.ACCTYPE.GRID.name());
+        linkList.add(linkEntity);
+
         tple.setLinkEntity(linkList.toArray(new LinkEntity[linkList.size()]));
         tple.setUuid(UUID.randomUUID().toString());
         return tple;

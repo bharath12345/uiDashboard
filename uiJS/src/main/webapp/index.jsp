@@ -24,9 +24,13 @@
 
         <!-- List of CSS -->
         <link rel="stylesheet" type="text/css" href="./js/dijit/themes/claro/claro.css"/>
+        <link rel="stylesheet" type="text/css" href="./js/dijit/themes/claro/document.css"/>
+        <link rel="stylesheet" type="text/css" href="./js/dijit/themes/claro/common.css"/>
         <link rel="stylesheet" type="test/css" href="./js/dgrid/css/dgrid.css"/>
         <link rel="stylesheet" type="test/css" href="./js/dgrid/css/skins/claro.css"/>
         <!--link rel="stylesheet" type="text/css" href="./js/jQuery/smoothness/jquery-ui-1.10.0.custom.min.css"/-->
+        <link rel="stylesheet" type="test/css" href="./js/gridx/resources/claro/Gridx.css"/>
+
 
         <!-- List of JS. First one should always be Dojo -->
         <script type="text/javascript" data-dojo-config="async: 1, tlmSiblingOfDojo: 0, isDebug: 1" src="./js/dojo/dojo.js"></script>

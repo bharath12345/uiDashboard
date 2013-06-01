@@ -87,6 +87,7 @@ public class AlertRealTime extends AbstractAction {
         columns[5] = "appName";
         columns[6] = "txnName";
         columns[7] = "createdTime";
+        alertMetaVO.setColumns(columns);
 
         return SUCCESS;
     }
@@ -100,7 +101,7 @@ public class AlertRealTime extends AbstractAction {
                     "noCache","true",
                     "excludeNullProperties","true"
             })})
-    public String applicationAlertDataAction() {
+    public String realTimeAlertDataAction() {
         param = getParameters();
 
         realTimeAlertVOList = new ArrayList<RealTimeAlertVO>();

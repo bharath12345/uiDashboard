@@ -24,6 +24,7 @@ define({
 
         /* ----- Application Accordion ----- */
         APPLICATION_ALERTS: "Application Alerts Dashboard",
+        JBOSS_PROTO_ALERTS: "Alerts from JBoss Prototype",
 
 
         /* ----- Transaction Accordion ----- */

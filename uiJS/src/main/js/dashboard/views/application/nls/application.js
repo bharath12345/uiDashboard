@@ -9,7 +9,16 @@ define({
 
         major: "Major",
         critical: "Critical",
-        minor: "Minor"
+        minor: "Minor",
+
+        id: "ID",
+        message: "Message",
+        title: "Title",
+        txnId: "Transaction ID",
+        appId: "Application ID",
+        appName: "Application Name",
+        txnName: "Transaction Name",
+        createdTime: "Created Time"
 
     }),
 

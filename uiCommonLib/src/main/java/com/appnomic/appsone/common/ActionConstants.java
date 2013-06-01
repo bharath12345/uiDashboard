@@ -33,6 +33,8 @@ public interface ActionConstants {
 		
 		//APPLICATION Screens Group
 		APPLICATION_ALERTS,
+
+
 		TRANSACTION_GRID,
 		
 		//Topology Group
@@ -53,7 +55,8 @@ public interface ActionConstants {
 	}
 	
 	public enum APPLICATION {
-		APPLICATION_ALERTS
+		APPLICATION_ALERTS,
+        JBOSS_PROTO_ALERTS
 	}
 
     public enum TRANSACTION {

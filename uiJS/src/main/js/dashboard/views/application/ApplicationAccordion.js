@@ -9,7 +9,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
         var ApplicationAccordion = declare(dashboard.classnames.ApplicationAccordion, AbstractAccordion, {
 
             showView: function(enumId, uuid, name, type, newWindow) {
-                console.log("view id = " + enumId + " name = " + name + " uuid = " + uuid + " type = " + type);
+                console.log("enumId = " + enumId + " name = " + name + " uuid = " + uuid + " type = " + type);
 
                 this.applicationView = this.getView(name, newWindow);
                 this.applicationView.createToolbarButtons(enumId, uuid, name, type);
@@ -18,6 +18,12 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
                     case dashboard.enumMap.APPLICATION.APPLICATION_ALERTS:
                         require(["dashboard/views/application/forms/ApplicationIncidentForm"], lang.hitch(this, function (ApplicationIncidentForm) {
                             Helper.createView(this.applicationView, this.applicationView.pageType, new ApplicationIncidentForm(this.applicationView.pageType));
+                        }));
+                        break;
+
+                    case dashboard.enumMap.APPLICATION.JBOSS_PROTO_ALERTS:
+                        require(["dashboard/views/application/forms/JBossProtoIncidentForm"], lang.hitch(this, function (JBossProtoIncidentForm) {
+                            Helper.createView(this.applicationView, this.applicationView.pageType, new JBossProtoIncidentForm(this.applicationView.pageType));
                         }));
                         break;
 
