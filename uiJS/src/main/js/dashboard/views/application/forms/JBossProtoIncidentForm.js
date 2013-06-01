@@ -1,11 +1,12 @@
 define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/application/nls/application", "dojo/i18n!dashboard/nls/dashboard",
     "dijit/layout/ContentPane", "dojox/layout/GridContainer", 'dashboard/widgets/AoneGridX', "dojo/request/xhr",
     "dojo/_base/lang", "dojo/store/Memory", "dojo/dom-construct",
-    "dashboard/logger/Logger", "dashboard/helper/Scheduler", "dashboard/helper/Helper", "dashboard/abstract/AbstractForm"],
+    "dashboard/logger/Logger", "dashboard/helper/Scheduler", "dashboard/helper/Helper", "dashboard/abstract/AbstractForm",
+    "dashboard/JBossProtoAlertsRealtime"],
 
     function (declare, i18n, i18nString, dashboardI18nString, ContentPane, GridContainer,
               Grid, xhr, lang, Memory, domConstruct,
-              Logger, Scheduler, Helper, AbstractForm) {
+              Logger, Scheduler, Helper, AbstractForm, JBossProtoAlertsRealtime) {
 
 
         /*
@@ -60,13 +61,16 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
                 for (var i = 0; i < columns.length; i++) {
                     var col = {};
                     col.field = columns[i];
-                    col.label = i18nString[columns[i]];
+                    col.name = i18nString[columns[i]];
                     columnMeta.push(col);
 
                     // create blank grid row
-                    row[col.field] = "";
+                    row[col.field] = "-";
                 }
-                gridata.push(row);
+
+                for(var i = 0; i < 25; i++) {
+                    gridata.push(row);
+                }
 
                 /*
                  ToDo: ToDo: ToDo: ToDo: todo todo todo todo todo
@@ -80,10 +84,13 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
                     JBossProtoIncidentForm.Grid.setData(gridata);
                     JBossProtoIncidentForm.Grid.render(this.innerDIV);
                     //JBossProtoIncidentForm.Grid.handleRowClick(this); // the handleRowClick() callback is invoked in this case
-
+                    dashboard.dom.STANDBY.hide();
                 } catch (e) {
                     console.log("exception = " + e);
                 }
+
+                var jbossProtoAlertsRealtime = new JBossProtoAlertsRealtime();
+                jbossProtoAlertsRealtime.startWebsocket();
 
             },
 

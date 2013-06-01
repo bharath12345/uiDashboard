@@ -22,7 +22,6 @@ public class AlertDataRcvr extends DataMessageConsumer {
     private transient MessageProducer producer;
     private Destination destination;
 
-
     public void init(){
         init(TopicNames.BROKER_URL, TopicNames.ALERT_TOPIC_NAME, new AlertRcvr());
 

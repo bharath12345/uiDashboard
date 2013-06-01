@@ -1,11 +1,11 @@
-define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
+define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard",
     "dojo/request/xhr", "dojo/_base/lang", "dashboard/logger/Logger", "dashboard/helper/Helper"],
 
     function (declare, i18n, i18nString, xhr, lang, Logger, Helper) {
 
-        dashboard.classnames.DashboardRealtime = "dashboard.DashboardRealtime";
+        dashboard.classnames.JBossProtoAlertsRealtime = "dashboard.JBossProtoAlertsRealtime";
 
-        var DashboardRealtime = declare(dashboard.classnames.DashboardRealtime, null, {
+        var JBossProtoAlertsRealtime = declare(dashboard.classnames.JBossProtoAlertsRealtime, null, {
 
             startWebsocket: function() {
 
@@ -28,7 +28,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard",
         
         });
 
-        DashboardRealtime.LOG = Logger.addTimer(new Logger(dashboard.classnames.DashboardRealtime));
+        JBossProtoAlertsRealtime.LOG = Logger.addTimer(new Logger(dashboard.classnames.JBossProtoAlertsRealtime));
 
-        return DashboardRealtime;
+        return JBossProtoAlertsRealtime;
     });

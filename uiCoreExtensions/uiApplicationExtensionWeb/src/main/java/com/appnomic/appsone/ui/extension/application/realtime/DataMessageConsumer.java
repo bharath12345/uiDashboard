@@ -23,8 +23,6 @@ public abstract class DataMessageConsumer {
     protected transient Session session;
     protected Destination destination;
 
-
-
     protected final void init(final String brokerURL, final String topicName, final MessageListener messageHandler){
         try{
             this.brokerURL = brokerURL;
