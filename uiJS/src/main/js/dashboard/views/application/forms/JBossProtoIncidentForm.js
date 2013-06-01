@@ -79,7 +79,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
                     JBossProtoIncidentForm.Grid.setColumnMeta(columnMeta);
                     JBossProtoIncidentForm.Grid.setData(gridata);
                     JBossProtoIncidentForm.Grid.render(this.innerDIV);
-                    JBossProtoIncidentForm.Grid.handleRowClick(this); // the handleRowClick() callback is invoked in this case
+                    //JBossProtoIncidentForm.Grid.handleRowClick(this); // the handleRowClick() callback is invoked in this case
 
                 } catch (e) {
                     console.log("exception = " + e);

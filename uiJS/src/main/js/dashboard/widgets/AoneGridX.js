@@ -4,7 +4,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
     "gridx/modules/Bar", "gridx/support/Summary", "gridx/support/DropDownPager", "gridx/support/QuickFilter",
     "gridx/support/LinkSizer", "gridx/support/LinkPager"],
 
-    function (declare, i18n, i18nString, Logger, Keyboard, Memory, lang, Observable, Grid, Cache, SingleSort,
+    function (declare, i18n, i18nString, Logger, Memory, lang, Observable, Grid, Cache, SingleSort,
               ColumnResizer, Pagination, Filter, Bar, Summary, DropDownPager, QuickFilter, LinkSizer, LinkPager) {
 
         dashboard.classnames.AoneGridX = "dashboard.widgets.AoneGridX";
@@ -50,7 +50,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/nls/dashboard", 
                         {pluginClass: LinkPager, style: 'text-align: right;'}
                     ]
                 }, div);
-                //this.grid.refresh();
+                this.grid.startup();
             },
 
             addRow: function(row) {
