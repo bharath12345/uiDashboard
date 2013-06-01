@@ -1,5 +1,5 @@
 define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/application/nls/application", "dojo/i18n!dashboard/nls/dashboard",
-    "dijit/layout/ContentPane", "dojox/layout/GridContainer", 'dashboard/widgets/AoneDgrid', "dojo/request/xhr",
+    "dijit/layout/ContentPane", "dojox/layout/GridContainer", 'dashboard/widgets/AoneGridX', "dojo/request/xhr",
     "dojo/_base/lang", "dojo/store/Memory", "dojo/dom-construct",
     "dashboard/logger/Logger", "dashboard/helper/Scheduler", "dashboard/helper/Helper", "dashboard/abstract/AbstractForm"],
 
@@ -51,9 +51,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
             },
 
             createGrid:function (data, input) {
-
                 var columnMeta = [];
-
                 JBossProtoIncidentForm.DATACLASS = input.alertMetaVO.dataActionClass;
 
                 var columns = input.alertMetaVO.columns;
@@ -66,9 +64,9 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
                     columnMeta.push(col);
 
                     // create blank grid row
-                    row[columns[j]] = "";
-                    gridata.push(row);
+                    row[col.field] = "";
                 }
+                gridata.push(row);
 
                 /*
                  ToDo: ToDo: ToDo: ToDo: todo todo todo todo todo
