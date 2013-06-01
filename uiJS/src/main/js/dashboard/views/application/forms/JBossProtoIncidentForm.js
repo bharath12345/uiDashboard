@@ -2,7 +2,7 @@ define(["dojo/_base/declare", "dojo/i18n", "dojo/i18n!dashboard/views/applicatio
     "dijit/layout/ContentPane", "dojox/layout/GridContainer", 'dashboard/widgets/AoneGridX', "dojo/request/xhr",
     "dojo/_base/lang", "dojo/store/Memory", "dojo/dom-construct",
     "dashboard/logger/Logger", "dashboard/helper/Scheduler", "dashboard/helper/Helper", "dashboard/abstract/AbstractForm",
-    "dashboard/JBossProtoAlertsRealtime"],
+    "dashboard/views/application/realtime/JBossProtoAlertsRealtime"],
 
     function (declare, i18n, i18nString, dashboardI18nString, ContentPane, GridContainer,
               Grid, xhr, lang, Memory, domConstruct,
